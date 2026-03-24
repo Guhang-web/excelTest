@@ -1,0 +1,230 @@
+/* 기본 설정 */
+:root {
+    --excel-green: #107C41;
+    --excel-dark: #0a5a2f;
+    --bg-gray: #f4f4f4;
+    --text-main: #333;
+    --border-color: #ddd;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* 태블릿/모바일 최적화 사이즈 */
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* 상단 배너 */
+.header {
+    width: 100%;
+    border-bottom: 4px solid var(--excel-green);
+}
+
+.banner-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* 공통 섹션 스타일 */
+.screen {
+    padding: 40px 25px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    color: var(--excel-green);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.intro-desc {
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.warning {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px;
+}
+.warning strong{
+    color: red;
+    font-weight: 800;
+}
+
+/* 프로그레스 바 */
+.progress-bar-container {
+    width: 100%;
+    background: #eee;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--excel-green);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+#progress-text {
+    font-size: 0.8rem;
+    color: #888;
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+
+/* 문제 및 보기 */
+.question-text {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.option-btn {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.option-btn:hover {
+    background: #f0fdf4;
+}
+
+.option-btn.selected {
+    background: var(--excel-green);
+    color: var(--white);
+    border-color: var(--excel-green);
+}
+
+/* 하단 버튼 영역 */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* 버튼 공통 스타일 */
+button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    flex: 1;
+    padding: 18px;
+    background: var(--excel-green);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    padding: 18px 30px;
+    background: #eee;
+    color: #555;
+}
+
+.btn-outline {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid var(--excel-green);
+    color: var(--excel-green);
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background: #f0f0f0;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* 결과 화면 및 오답 노트 */
+.level-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border: 1px dashed var(--excel-green);
+}
+
+#level-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.review-section {
+    text-align: left;
+    margin-top: 40px;
+    background: #fff;
+    padding-top: 20px;
+}
+
+.review-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.review-q { font-weight: bold; margin-bottom: 10px; }
+.my-ans { color: #d32f2f; margin-bottom: 5px; font-size: 0.95rem; }
+.correct-ans { color: #107c41; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
+.explanation { 
+    background: #f0fdf4; 
+    padding: 10px; 
+    border-left: 4px solid var(--excel-green);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#close-review-btn {
+    width: 100%;
+    margin-top: 20px;
+}
