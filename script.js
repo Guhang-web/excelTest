@@ -7,37 +7,37 @@ const questions = [
         info: "SUM 함수는 지정한 셀 범위의 모든 수의 합계를 구하는 가장 기초적인 함수입니다."
     },
     {
-        q: "수식을 다른 셀로 복사할 때, 참조하는 셀 주소가 변하지 않도록 '절대 참조'를 적용하기 위해 사용하는 기호는?",
+        q: "수식을 다른 셀로 복사할 때, 참조하는 셀 주소가 변하지 않도록<br/>'절대 참조'를 적용하기 위해 사용하는 기호는?",
         options: ["@", "#", "$", "%", "&", "모름"],
         answer: 2, // $
         info: "'$' 기호는 수식을 복사할 때 열(Column)이나 행(Row) 주소를 고정하여 변하지 않게 하는 절대 참조 기호입니다."
     },
     {
-        q: "만약 점수가 80점 이상이면 '합격', 아니면 '불합격'으로 표시하라'는 조건을 구현할 때 사용하는 함수는?",
+        q: "만약 점수가 80점 이상이면 '합격', 아니면 '불합격'으로 표시하라'는<br/> 조건을 구현할 때 사용하는 함수는?",
         options: ["AND", "OR", "IF", "VLOOKUP", "CHOOSE", "모름"],
         answer: 2, // IF
         info: "IF 함수는 주어진 조건이 참(True)인지 거짓(False)인지에 따라 다른 값을 결과로 돌려줍니다."
     },
     {
-        q: "기준값을 가지고 다른 표나 범위에서 관련된 데이터를 찾아올 때 실무에서 가장 많이 사용하는 함수는?",
+        q: "기준값을 가지고 다른 표나 범위에서 관련된 데이터를 찾아올 때<br/> 실무에서 가장 많이 사용하는 함수는?",
         options: ["FIND", "SEARCH", "MATCH", "INDEX", "VLOOKUP", "모름"],
         answer: 4, // VLOOKUP
         info: "VLOOKUP 함수는 표의 가장 왼쪽 열에서 특정 값을 찾아, 그 행에 있는 다른 열의 데이터를 가져오는 실무 핵심 함수입니다."
     },
     {
-        q: "여러 셀에 입력된 텍스트 양 끝의 불필요한 띄어쓰기(공백)를 한 번에 제거해 주는 함수는 무엇인가요?",
+        q: "여러 셀에 입력된 텍스트 양 끝의 불필요한 띄어쓰기(공백)를<br/> 한 번에 제거해 주는 함수는 무엇인가요?",
         options: ["TRIM", "CLEAN", "LEFT", "MID", "SUBSTITUTE", "모름"],
         answer: 0, // TRIM
         info: "TRIM 함수는 텍스트의 양 끝 공백과 단어 사이의 불필요한 공백을 하나만 남기고 모두 제거합니다."
     },
     {
-        q: "방대한 양의 데이터를 빠르고 쉽게 요약, 분석, 필터링할 수 있도록 도와주는 엑셀의 핵심 기능은?",
+        q: "방대한 양의 데이터를 빠르고 쉽게 요약, 분석, 필터링<br/>할 수 있도록 도와주는 엑셀의 핵심 기능은?",
         options: ["조건부 서식", "데이터 유효성 검사", "피벗 테이블", "매크로", "목표값 찾기", "모름"],
         answer: 2, // 피벗 테이블
         info: "피벗 테이블은 대량의 데이터를 클릭 몇 번으로 요약, 집계, 분석할 수 있는 엑셀 최고의 도구입니다."
     },
     {
-        q: "실무에서 데이터에 필터(Filter)를 빠르게 적용하거나 해제할 때 사용하는 단축키는 무엇인가요?",
+        q: "실무에서 데이터에 필터(Filter)를 빠르게 적용하거나 해제할 때<br/> 사용하는 단축키는 무엇인가요?",
         options: ["Ctrl + C", "Ctrl + Shift + L", "Ctrl + F", "Alt + F11", "Ctrl + 1", "모름"],
         answer: 1, // Ctrl + Shift + L
         info: "Ctrl+Shift+L은 데이터 범위 내에서 빠르게 자동 필터를 적용하거나 해제할 수 있는 유용한 단축키입니다."
@@ -71,7 +71,7 @@ function startQuiz() {
 
 function renderQuestion() {
     const currentQ = questions[currentIdx];
-    questionText.textContent = `Q${currentIdx + 1}. ${currentQ.q}`;
+    questionText.innerHTML = `Q${currentIdx + 1}. ${currentQ.q}`;
     
     // 보기 생성
     optionsContainer.innerHTML = '';
@@ -97,7 +97,7 @@ function renderQuestion() {
 
 function selectOption(index) {
     userAnswers[currentIdx] = index;
-    renderQuestion(); // 선택 시 시각적 업데이트 및 다음 버튼 활성화
+    renderQuestion(); 
 }
 
 function goNext() {
@@ -133,16 +133,16 @@ function showResult() {
 
     if (score <= 2) {
         levelTitle.textContent = "엑셀 새싹 🌱";
-        levelDesc.textContent = "기초부터 차근차근! 엑셀의 기본 원리를 잡는 상담이 필요해요.";
+        levelDesc.textContent = "기초부터 차근차근! 엑셀의 기본 원리를 잡는 상담이 필요해요. (실전OA2과정 추천)";
     } else if (score <= 4) {
         levelTitle.textContent = "엑셀 주니어 🌿";
-        levelDesc.textContent = "기본기는 있으시네요! 실무에 자주 쓰이는 함수 위주로 효율을 높여볼까요?";
+        levelDesc.textContent = "기본기는 있으시네요! 실무에 자주 쓰이는 함수 위주로 효율을 높여볼까요? (컴활2급과정 추천)";
     } else if (score <= 6) {
         levelTitle.textContent = "엑셀 프로 🌳";
-        levelDesc.textContent = "엑셀을 꽤 다루실 줄 아네요! 복잡한 데이터 가공이나 피벗 테이블 활용법을 더 파고들어 봐요.";
+        levelDesc.textContent = "엑셀을 꽤 다루실 줄 아네요! 복잡한 데이터 가공이나 피벗 테이블 활용법을 더 파고들어 봐요. (컴활1급과정 추천)";
     } else {
         levelTitle.textContent = "엑셀 마스터 👑";
-        levelDesc.textContent = "완벽합니다! 업무 자동화나 데이터 모델링 등 고급 기능 위주의 컨설팅을 추천해요.";
+        levelDesc.textContent = "완벽합니다! 업무 자동화나 데이터 모델링 등 고급 기능 위주의 컨설팅을 추천해요. (컴활1급과정 추천)";
     }
 }
 
